@@ -11,15 +11,18 @@ function App() {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
       .then((data) => setCountries(data));
-  }, []);
+  });
 
   // useEffect(() => {
   //   console.log(countries.map((country) => country.name));
   // });
   return (
     <Routes>
-      <Route path="/" element={<CountryList countries={countries} />}></Route>
-      <Route path="/:id" element={<CountryDetails />}></Route>
+      <Route path="/" element={<CountryList />}></Route>
+      <Route
+        path="/:id"
+        element={<CountryDetails countries={countries} />}
+      ></Route>
     </Routes>
   );
 }
