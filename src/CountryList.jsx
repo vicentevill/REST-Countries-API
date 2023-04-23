@@ -46,7 +46,6 @@ export default function CountryList() {
           {country.name.common}
         </Link>
       ))}
-      {/* <Link to={`/${id}`}>link 1</Link> */}
     </main>
   );
 }
