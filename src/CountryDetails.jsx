@@ -1,11 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Bordering from "./Bordering";
 
 export default function CountryDetails() {
   const { id } = useParams();
   const [country, setCountry] = useState({});
   const [countryName, setCountryName] = useState("");
+  const [borders, setBorders] = useState();
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/alpha/${id}`)
@@ -13,13 +15,18 @@ export default function CountryDetails() {
       .then((data) => {
         setCountry(data);
         setCountryName(country[0].name.common);
+        setBorders(country[0].borders);
       });
   });
 
   function handleClick() {
-    console.log(country[0].name?.common);
+    console.log(country);
   }
-  //use id to fetch info on country
 
-  return <div onClick={handleClick}>Country Name:{countryName}</div>;
+  return (
+    <>
+      <Bordering borders={borders}></Bordering>
+      <div onClick={handleClick}>Country Name:{countryName}</div>
+    </>
+  );
 }

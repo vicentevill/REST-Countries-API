@@ -43,7 +43,20 @@ export default function CountryList() {
       <input type="text" value={searchQuery} onChange={handleSearchChange} />
       {filteredCountries.map((country) => (
         <Link to={`/${country.cca3}`} key={country.cca3}>
-          {country.name.common}
+          <img src={`${country.flags.svg}`} alt="flag" />
+          <h1></h1>
+          <p>
+            <b>Population:</b>
+            {country.name.common}
+          </p>
+          <p>
+            <b>Region:</b>
+            {country.region}
+          </p>
+          <p>
+            <b>Capital:</b>
+            {country.capital}
+          </p>
         </Link>
       ))}
     </main>
