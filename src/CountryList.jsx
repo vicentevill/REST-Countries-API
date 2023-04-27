@@ -11,13 +11,7 @@ export default function CountryList() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const [regions, setRegions] = useState([
-    "Africa",
-    "America",
-    "Asia",
-    "Europe",
-    "Oceania",
-  ]);
+  const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   //Effect
   useEffect(() => {
@@ -72,10 +66,18 @@ export default function CountryList() {
           />
         </div>
 
-        <div>
-          <div>Filter By Region</div>
-          <aside>
+        <div className="CountryList__dropdown-wrapper">
+          <button className="CountryList__dropdown-button">
+            Filter By Region
+            <img
+              className="CountryList__dropdown-icon"
+              src="/expand_icon.svg"
+              alt="expand"
+            />
+          </button>
+          <aside className="CountryList__dropdown-options">
             <p
+              className="CountryList__option"
               onClick={() => {
                 handleRegionChange(regions[0]);
               }}
@@ -83,6 +85,7 @@ export default function CountryList() {
               {regions[0]}
             </p>
             <p
+              className="CountryList__option"
               onClick={() => {
                 handleRegionChange(regions[1]);
               }}
@@ -90,6 +93,7 @@ export default function CountryList() {
               {regions[1]}
             </p>
             <p
+              className="CountryList__option"
               onClick={() => {
                 handleRegionChange(regions[2]);
               }}
@@ -97,6 +101,7 @@ export default function CountryList() {
               {regions[2]}
             </p>
             <p
+              className="CountryList__option"
               onClick={() => {
                 handleRegionChange(regions[3]);
               }}
@@ -104,6 +109,7 @@ export default function CountryList() {
               {regions[3]}
             </p>
             <p
+              className="CountryList__option"
               onClick={() => {
                 handleRegionChange(regions[4]);
               }}
@@ -113,7 +119,6 @@ export default function CountryList() {
           </aside>
         </div>
       </div>
-
       <div className="CountryList__wrapper">
         {filteredCountries.map((country) => (
           <Link
