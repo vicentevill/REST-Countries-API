@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --dark-grey: #202d36;
+  --grey: #2b3743;
+  --white: white;
+}
+
 *,
 *::before,
 *::after {
@@ -12,9 +20,12 @@
   background: none;
   background: rgba(146, 146, 146, 0.266);
   outline: dotted 2px;
+  color: var(--white);
 }
 
 html {
+  background: var(--dark-grey);
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
@@ -29,7 +40,6 @@ video {
   max-width: 100%;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+b {
+  font-weight: 800;
 }

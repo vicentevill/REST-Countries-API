@@ -6,25 +6,27 @@ export default function CountryDetails() {
   const { id } = useParams();
   const [country, setCountry] = useState({});
   const [countryName, setCountryName] = useState("");
-  const [borders, setBorders] = useState();
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/alpha/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCountry(data);
-        setCountryName(country[0].name.common);
-        setBorders(country[0].borders);
       });
-  });
+  }, []);
+
+  useEffect(() => {
+    if (country && country[0]) {
+      setCountryName(country[0].name.common);
+    }
+  }, [country]);
 
   function handleClick() {
-    console.log(country);
+    console.log(country[0].name.common);
   }
 
   return (
     <>
-      <Bordering borders={borders}></Bordering>
       <div onClick={handleClick}>Country Name:{countryName}</div>
     </>
   );

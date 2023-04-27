@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import "./CountryList.css";
 
 export default function CountryList() {
+  //State
   const [countries, setCountries] = useState([]);
+
   const [filteredCountries, setFilteredCountries] = useState([]);
+
   const [searchQuery, setSearchQuery] = useState("");
+
   const [regions, setRegions] = useState([
     "Africa",
     "America",
@@ -14,6 +18,8 @@ export default function CountryList() {
     "Europe",
     "Oceania",
   ]);
+
+  //Effect
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
@@ -27,14 +33,14 @@ export default function CountryList() {
       setFilteredCountries(countries);
     }
   }, [filteredCountries, countries]);
+
+  //Functions
   const handleSearchChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
-    // console.log(query);
     const filtered = countries.filter((country) =>
       country.name.common.toLowerCase().startsWith(query.toLowerCase())
     );
-    // console.log(filtered);
     setFilteredCountries(filtered);
   };
 
@@ -54,66 +60,88 @@ export default function CountryList() {
       >
         test
       </button>
+      <div className="CountryList__filters-wrapper">
+        <div className="CountryList__search-wrapper">
+          <img className="CountryList__search-icon" src="/search.svg" alt="" />
+          <input
+            placeholder="Search for a country..."
+            className="CountryList__search"
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
 
-      <div>
-        <div>Filter By Region</div>
         <div>
-          <p
-            onClick={() => {
-              handleRegionChange(regions[0]);
-            }}
-          >
-            {regions[0]}
-          </p>
-          <p
-            onClick={() => {
-              handleRegionChange(regions[1]);
-            }}
-          >
-            {regions[1]}
-          </p>
-          <p
-            onClick={() => {
-              handleRegionChange(regions[2]);
-            }}
-          >
-            {regions[2]}
-          </p>
-          <p
-            onClick={() => {
-              handleRegionChange(regions[3]);
-            }}
-          >
-            {regions[3]}
-          </p>
-          <p
-            onClick={() => {
-              handleRegionChange(regions[4]);
-            }}
-          >
-            {regions[4]}
-          </p>
+          <div>Filter By Region</div>
+          <aside>
+            <p
+              onClick={() => {
+                handleRegionChange(regions[0]);
+              }}
+            >
+              {regions[0]}
+            </p>
+            <p
+              onClick={() => {
+                handleRegionChange(regions[1]);
+              }}
+            >
+              {regions[1]}
+            </p>
+            <p
+              onClick={() => {
+                handleRegionChange(regions[2]);
+              }}
+            >
+              {regions[2]}
+            </p>
+            <p
+              onClick={() => {
+                handleRegionChange(regions[3]);
+              }}
+            >
+              {regions[3]}
+            </p>
+            <p
+              onClick={() => {
+                handleRegionChange(regions[4]);
+              }}
+            >
+              {regions[4]}
+            </p>
+          </aside>
         </div>
       </div>
-      <input type="text" value={searchQuery} onChange={handleSearchChange} />
-      {filteredCountries.map((country) => (
-        <Link to={`/${country.cca3}`} key={country.cca3}>
-          <img src={`${country.flags.svg}`} alt="flag" />
-          <h1></h1>
-          <p>
-            <b>Population:</b>
-            {country.name.common}
-          </p>
-          <p>
-            <b>Region:</b>
-            {country.region}
-          </p>
-          <p>
-            <b>Capital:</b>
-            {country.capital}
-          </p>
-        </Link>
-      ))}
+
+      <div className="CountryList__wrapper">
+        {filteredCountries.map((country) => (
+          <Link
+            className="CountryList__country-card"
+            to={`/${country.cca3}`}
+            key={country.cca3}
+          >
+            <img src={`${country.flags.svg}`} alt="flag" />
+
+            <div className="CountryList__info">
+              <h1 className="CountryList__name">{country.name.common}</h1>
+              <p>
+                <b>Population:</b>{" "}
+                {country.population.toLocaleString(undefined, {
+                  useGrouping: true,
+                  maximumFractionDigits: 0,
+                })}
+              </p>
+              <p>
+                <b>Region:</b> {country.region}
+              </p>
+              <p>
+                <b>Capital:</b> {country.capital}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </main>
   );
 }
