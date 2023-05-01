@@ -1,0 +1,7 @@
+.CountryDetails {
+  display: flex;
+}
+
+.CountryDetails__flag {
+  width: 50%;
+}
