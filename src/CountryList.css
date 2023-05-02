@@ -51,9 +51,6 @@
   width: 1.5rem;
 }
 
-/* .CountryList__search {
-} */
-
 .CountryList__search:focus {
   border: none;
   outline: none;
@@ -104,4 +101,26 @@
 
 .CountryList__dropdown-wrapper:hover .CountryList__dropdown-options {
   display: grid;
+}
+
+@media only screen and (max-width: 800px) {
+  .CountryList__wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .CountryList__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .CountryList__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .CountryList__filters-wrapper {
+    flex-direction: column;
+  }
 }

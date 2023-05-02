@@ -52,3 +52,9 @@
     hue-rotate(169deg) brightness(120%) contrast(101%);
   width: 1.5rem;
 }
+
+@media only screen and (max-width: 650px) {
+  .CountryDetails__wrapper {
+    flex-direction: column;
+  }
+}
