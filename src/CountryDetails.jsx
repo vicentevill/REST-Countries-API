@@ -96,7 +96,6 @@ export default function CountryDetails() {
           </div>
         </div>
       </main>
-      <div onClick={handleClick}>Country Name:{countryName}</div>
     </>
   );
 }
