@@ -1,4 +1,5 @@
 import React from "react";
+import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -49,6 +50,7 @@ export default function CountryDetails() {
 
   return (
     <>
+      <Nav></Nav>
       <main className="CountryDetails">
         <div className="CountryDetails__wrapper">
           <div className="CountryDetails__flag-and-back-wrapper">
