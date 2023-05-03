@@ -8,6 +8,7 @@
 
 .CountryDetails__flag {
   width: 25rem;
+  height: fit-content;
 }
 
 .CountryDetails__header {
@@ -45,6 +46,7 @@
   width: fit-content;
   position: relative;
   display: flex;
+  align-items: center;
 }
 
 .CountryDetails__back-arrow {
@@ -54,6 +56,10 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .CountryDetails {
+    padding: 4rem 0;
+  }
+
   .CountryDetails__wrapper {
     flex-direction: column;
   }
