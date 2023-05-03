@@ -1,4 +1,4 @@
-.CountryDetails {
+/* .CountryDetails {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -61,6 +61,114 @@
   }
 
   .CountryDetails__wrapper {
+    flex-direction: column;
+  }
+} */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.CountryDetails {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.CountryDetails__flag {
+  width: 25rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.CountryDetails__header {
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.CountryDetails__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.CountryDetails__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.CountryDetails__back {
+  position: absolute;
+  top: -4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  background: var(--grey);
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.CountryDetails__flag-and-back-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.CountryDetails__back-arrow {
+  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(11%)
+    saturate(7487%) hue-rotate(169deg) brightness(120%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7487%)
+    hue-rotate(169deg) brightness(120%) contrast(101%);
+  width: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .CountryDetails {
+    padding: 4rem 0 0 0;
+  }
+
+  .CountryDetails__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
