@@ -66,5 +66,6 @@
 
   .CountryDetails__flag-and-back-wrapper {
     align-items: baseline;
+    height: fit-content;
   }
 }
