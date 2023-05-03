@@ -57,10 +57,14 @@
 
 @media only screen and (max-width: 650px) {
   .CountryDetails {
-    padding: 4rem 0;
+    padding: 4rem 0 0 0;
   }
 
   .CountryDetails__wrapper {
     flex-direction: column;
+  }
+
+  .CountryDetails__flag-and-back-wrapper {
+    align-items: baseline;
   }
 }
