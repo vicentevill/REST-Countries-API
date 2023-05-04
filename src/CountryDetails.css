@@ -153,10 +153,8 @@
 }
 
 .CountryDetails__back-arrow {
-  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(11%)
-    saturate(7487%) hue-rotate(169deg) brightness(120%) contrast(101%);
-  filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7487%)
-    hue-rotate(169deg) brightness(120%) contrast(101%);
+  -webkit-filter: var(--filter-white);
+  filter: var(--filter-white);
   width: 1.5rem;
 }
 
