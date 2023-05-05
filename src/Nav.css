@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 2rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .Nav__home {
