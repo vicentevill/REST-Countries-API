@@ -44,10 +44,6 @@ export default function CountryDetails() {
     }
   }, [country]);
 
-  function handleClick() {
-    console.log(country[0].name.common);
-  }
-
   return (
     <>
       <Nav></Nav>

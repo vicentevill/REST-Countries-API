@@ -4,6 +4,8 @@ import "./Nav.css";
 
 export default function Nav() {
   const [theme, setTheme] = useState("dark");
+  const [themeText, setThemeText] = useState("Dark Mode");
+  const [themeIcon, setThemeIcon] = useState("/darkmode.svg");
 
   const handleThemeChange = () => {
     const root = document.documentElement;
@@ -13,6 +15,8 @@ export default function Nav() {
       root.style.setProperty("--grey", "white");
       root.style.setProperty("--white", "unset");
       root.style.setProperty("--filter-white", "unset");
+      setThemeText("Dark Mode");
+      setThemeIcon("/darkmode.svg");
     } else {
       setTheme("dark");
       root.style.setProperty("--dark-grey", "#202d36");
@@ -22,10 +26,10 @@ export default function Nav() {
         "--filter-white",
         "brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7487%) hue-rotate(169deg) brightness(120%) contrast(101%)"
       );
+      setThemeText("Light Mode");
+      setThemeIcon("/lightmode.svg");
     }
   };
-
-  // Select the root element
 
   return (
     <nav className="Nav">
@@ -33,12 +37,8 @@ export default function Nav() {
         Where in the world?
       </Link>
       <button className="Nav__dark-mode" onClick={handleThemeChange}>
-        <img
-          className="Nav__dark-mode-icon"
-          src="/darkmode.svg"
-          alt="dark-mode"
-        />
-        Dark Mode
+        <img className="Nav__dark-mode-icon" src={themeIcon} alt="theme" />
+        {themeText}
       </button>
     </nav>
   );

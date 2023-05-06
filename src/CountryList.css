@@ -93,7 +93,6 @@
 
 .CountryList__option {
   cursor: pointer;
-  width: fit-content;
 }
 
 .CountryList__dropdown-wrapper {

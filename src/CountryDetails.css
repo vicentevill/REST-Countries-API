@@ -65,13 +65,6 @@
   }
 } */
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .CountryDetails {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -94,6 +87,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  box-shadow: 0px 0px 35px -10px rgba(0, 0, 0, 0.5);
 }
 
 .CountryDetails__header {

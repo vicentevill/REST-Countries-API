@@ -5,7 +5,6 @@ import Nav from "./Nav";
 import "./CountryList.css";
 
 export default function CountryList() {
-  //State
   const [countries, setCountries] = useState([]);
 
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -14,7 +13,6 @@ export default function CountryList() {
 
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
-  //Effect
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
@@ -29,7 +27,6 @@ export default function CountryList() {
     }
   }, [filteredCountries, countries]);
 
-  //Functions
   const handleSearchChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
