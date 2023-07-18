@@ -4,8 +4,8 @@ import "./Nav.css";
 
 export default function Nav() {
   const [theme, setTheme] = useState("dark");
-  const [themeText, setThemeText] = useState("Dark Mode");
-  const [themeIcon, setThemeIcon] = useState("/darkmode.svg");
+  const [themeText, setThemeText] = useState("Light Mode");
+  const [themeIcon, setThemeIcon] = useState("/lightmode.svg");
 
   const handleThemeChange = () => {
     const root = document.documentElement;
